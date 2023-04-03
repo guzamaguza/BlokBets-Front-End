@@ -1,4 +1,6 @@
+import { useContext } from 'react'
 import { createBrowserRouter } from 'react-router-dom'
+import { AuthContext } from '../auth/AuthProvider'
 import AccountDashboard from '../component/AccountDashboard/AccountDashboard'
 import BetAccept from '../component/betAccept/BetAccept'
 import Bets from '../component/Bets/Bets'
@@ -12,7 +14,9 @@ import Register from '../component/Register/Register'
 import Main from '../layout/Main'
 
 
+
  const router = createBrowserRouter  ([
+  
     
     {
          path: '/',

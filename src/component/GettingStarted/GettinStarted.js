@@ -1,9 +1,20 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, { useContext } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
+import { AuthContext } from '../../auth/AuthProvider'
+import useTitle from '../../Router/useTitle'
 
 import homemain from './../../assest/img-home/homemain.png'
 
 const GettinStarted = () => {
+
+
+  useTitle('Getting started')
+  const navigate=useNavigate()
+  const {user} = useContext(AuthContext);
+  if (user?.uid) {
+    navigate("/");
+}
+  
   return (
     <div>
 
@@ -16,7 +27,7 @@ const GettinStarted = () => {
 
           <div className="">
           <p className='text-[#59DCD3] my-2 tracking-wide text-[14px]'>
-               Eliminate The House , Unleash Profit Protential
+               Eliminate The House, Unleash Profit Protential
               </p>
               <h1 className='text-[30px] sm:leading-[50px] mb-6 text-white	 sm:text-[50px] font-semibold '>Get Started Page
             </h1>

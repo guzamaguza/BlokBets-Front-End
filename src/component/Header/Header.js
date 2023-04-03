@@ -1,7 +1,9 @@
 
 
-import React, {  useEffect, useState } from 'react'
+import React, {  useContext, useEffect, useState } from 'react'
 import { Link, NavLink } from 'react-router-dom'
+import { AuthContext } from '../../auth/AuthProvider';
+import { FcButtingIn,FcBusinesswoman,FcOnlineSupport,FcNightPortrait } from "react-icons/fc";
 
 
 
@@ -11,6 +13,14 @@ import { Link, NavLink } from 'react-router-dom'
 
 
 const Header = () => {
+
+  
+  const { user, logout } = useContext(AuthContext);
+  const handleLogOut = () => {
+    logout()
+        .then()
+        .catch();
+}
 
  
 
@@ -28,23 +38,30 @@ const Header = () => {
                 title='Home'
                 className={({ isActive }) =>
                   isActive
-                    ? 'font-normal  tracking-wide capitalize text-[#59DCD3]  transition-colors duration-200 hover:text-deep-purple-accent-400'
-                    : 'font-normal  tracking-wide capitalize text-[#e6e7e7] transition-colors duration-200 hover:text-deep-purple-accent-400'
+                    ? 'font-normal my-2 lg:my-0  tracking-wide capitalize text-[#59DCD3]  transition-colors duration-200 hover:text-deep-purple-accent-400'
+                    : 'font-normal my-2 lg:my-0  tracking-wide capitalize text-[#e6e7e7] transition-colors duration-200 hover:text-deep-purple-accent-400'
                 }
               >
                 Home
               </NavLink>
       </li>
 
-      <li>
+
+      {
+              user?.uid ?
+        ''
+          :
+          
+          <>
+              <li>
               <NavLink
                 to='/login'
                 aria-label='Shows'
                 title='Home'
                 className={({ isActive }) =>
                   isActive
-                    ? 'font-normal tracking-wide text-[#59DCD3]  capitalize transition-colors duration-200 hover:text-deep-purple-accent-400'
-                    : 'font-normal  tracking-wide text-[#e6e7e7] capitalize transition-colors duration-200 hover:text-deep-purple-accent-400'
+                    ? 'font-normal my-2 lg:my-0 tracking-wide text-[#59DCD3]  capitalize transition-colors duration-200 hover:text-deep-purple-accent-400'
+                    : 'font-normal my-2 lg:my-0  tracking-wide text-[#e6e7e7] capitalize transition-colors duration-200 hover:text-deep-purple-accent-400'
                 }
         >
           
@@ -53,19 +70,33 @@ const Header = () => {
       </li>
 
       <li>
+
               <NavLink
                 to='/register'
                 aria-label='blog'
                 title='Home'
                 className={({ isActive }) =>
                   isActive
-                    ? 'font-normal  tracking-wide capitalize text-[#59DCD3]  transition-colors duration-200 hover:text-deep-purple-accent-400'
-                    : 'font-normal  tracking-wide capitalize text-[#e6e7e7] transition-colors duration-200 hover:text-deep-purple-accent-400'
+                    ? 'font-normal my-2 lg:my-0  tracking-wide capitalize text-[#59DCD3]  transition-colors duration-200 hover:text-deep-purple-accent-400'
+                    : 'font-normal  my-2 lg:my-0 tracking-wide capitalize text-[#e6e7e7] transition-colors duration-200 hover:text-deep-purple-accent-400'
                 }
               >
                 Register
               </NavLink>
       </li>
+
+
+
+         
+                      
+</>
+
+}
+
+
+    
+
+
       <li>
               <NavLink
                 to='/bets'
@@ -73,8 +104,8 @@ const Header = () => {
                 title='Home'
                 className={({ isActive }) =>
                   isActive
-                    ? 'font-normal  tracking-wide capitalize text-[#59DCD3]  transition-colors duration-200 hover:text-deep-purple-accent-400'
-                    : 'font-normal  tracking-wide capitalize text-[#e6e7e7] transition-colors duration-200 hover:text-deep-purple-accent-400'
+                    ? 'font-normal my-2 lg:my-0  tracking-wide capitalize text-[#59DCD3]  transition-colors duration-200 hover:text-deep-purple-accent-400'
+                    : 'font-normal my-2 lg:my-0 tracking-wide capitalize text-[#e6e7e7] transition-colors duration-200 hover:text-deep-purple-accent-400'
                 }
         >
           Bets
@@ -87,14 +118,47 @@ const Header = () => {
                 title='Home'
                 className={({ isActive }) =>
                   isActive
-                    ? 'font-normal  tracking-wide  capitalize text-[#59DCD3]   transition-colors duration-200 hover:text-deep-purple-accent-400'
-                    : 'font-normal  tracking-wide capitalize text-[#e6e7e7] transition-colors duration-200 hover:text-deep-purple-accent-400'
+                    ? 'font-normal my-2 lg:my-0   tracking-wide  capitalize text-[#59DCD3]   transition-colors duration-200 hover:text-deep-purple-accent-400'
+                    : 'font-normal my-2 lg:my-0  tracking-wide capitalize text-[#e6e7e7] transition-colors duration-200 hover:text-deep-purple-accent-400'
                 }
               >
                 Legal
               </NavLink>
       </li>
+      
 
+
+
+      {
+              user?.uid ?
+          <>
+            <li>
+              <NavLink
+                
+                aria-label='blog'
+                title='Home'
+                className={({ isActive }) =>
+                  isActive
+                    ? 'font-normal my-2 lg:my-0   tracking-wide  capitalize text-[white]   transition-colors duration-200 hover:text-deep-purple-accent-400'
+                    : 'font-normal my-2 lg:my-0  tracking-wide capitalize text-[#e6e7e7] transition-colors duration-200 hover:text-deep-purple-accent-400'
+                }
+              >
+                {user?.displayName}
+                
+              </NavLink>
+      </li>
+
+            <button onClick={handleLogOut} className=' lg:my-0 text-white uppercase   font-normal outline-none text-[14px] '>Log Out</button>
+            {/* <p className='my-2 lg:my-0 text-white capitalize'>{user?.displayName}</p> */}
+    
+    
+            
+          </>
+          :
+          
+''
+
+}
         
 
 
@@ -130,7 +194,7 @@ const Header = () => {
           >
            
            <span className='ml-2  px-2 lg:px-6 text-2xl text-white  font-semibold tracking-wide #302e2c text-shadow-lg'>
-           BlockBets 
+            BlokBets
 
             </span>
           </Link>
@@ -181,7 +245,7 @@ const Header = () => {
            
 
             <span className='ml-2 px-6  text-2xl text-[#59DCD3] text-[30px] sm:text-[50px]  font-bold tracking-wide #302e2c text-shadow-lg'>
-           BlockBets 
+           BlokBets 
 
             </span>
           </Link>
@@ -205,8 +269,8 @@ const Header = () => {
                       </button>
                     </div>
                   </div>
-                  <nav>
-                  <ul className='spacey-4'>
+                  <nav className='pl-8 '>
+                  <ul className='spacey-4 mt-[-40px] pb-8 '>
            
                       
 

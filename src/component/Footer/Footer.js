@@ -7,9 +7,12 @@ import homemain from './../../assest/img-home/homemain.png'
 const Footer = () => {
   return (
     <> <div className="px-8 sm:px-12  py-14">
-    <div className="sm:px-12  mt-8">
-<div className="">
-<img className='min-w-[200px] min-h-[250px]' src={homemain} alt="" />
+    <div className="flex flex-col-reverse lg:flex-col   mt-8">
+        <div className=" sm:mt-0 mx-auto mt-20 flex flex-col  justify-center">
+          <div className="flex justify-center">
+          <img className='w-[302px] h-[93px] sm:w-full sm:h-full' src={homemain} alt="" />
+
+          </div>
 </div>
 <footer className="text-center sm:text-start my-8 justify-center gap-4 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 text-[#D0D0D0]">
 <div>
@@ -23,7 +26,7 @@ const Footer = () => {
 
 </div> 
 <div>
-<span className="text-white text-center sm:text-start">Our Missionl</span> <br />
+<span className="text-white text-center sm:text-start">Our Mission</span> <br />
 <a className="link hover:no-underline text-[15px] w-[293px] text-center sm:text-start link-hover">Our mission is to make betting transparent and to help users reach their full potential in wagering and in life.</a>
 
 </div>
@@ -44,7 +47,7 @@ const Footer = () => {
               
               <div className="sm:w-[38%]">
                  
-                  <h1 className='text-xl font-semibold text-white'>BlockBets</h1>
+                  <h1 className='text-xl font-semibold text-white'> BlokBets</h1>
               </div>
               <div className="flex sm-w[62%] justify-center items-center overflow-hidden ">
                   <span className='font-normal  md:px-4 text-white'>Home</span>

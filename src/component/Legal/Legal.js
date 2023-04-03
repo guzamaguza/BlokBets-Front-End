@@ -1,7 +1,11 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import useTitle from '../../Router/useTitle'
 
 const Legal = () => {
+
+
+  useTitle('Legal')
   return (<> 
     
     <div className="px-8 sm:px-12  py-14">
@@ -11,7 +15,7 @@ const Legal = () => {
 
   <div className=" relative	">
   <p className='text-[#59DCD3] my-2 tracking-wide text-[14px]'>
-         Eliminate The House , Unleash Profit Protential
+         Eliminate The House, Unleash Profit Protential
         </p>
         <h1 className='text-[30px] sm:leading-[50px] mb-6 text-white	 sm:text-[50px] font-semibold '>Legal</h1>
 
@@ -44,7 +48,7 @@ const Legal = () => {
       <div className="sm:px-12">
 
         <div className="px-12">
-        <p className='text-[#59DCD3] my-2 tracking-wide  text-[40px]'>
+        <p className='text-[#59DCD3] my-2 tracking-wide  text-[20px] md:text-[40px]'>
       BlokBets is dedicated to providing peace of mind to users <br />
 
 
@@ -81,7 +85,7 @@ Users’ personal info will never be sold to third parties.
       <div className="sm:px-12">
 
         <div className="px-12">
-        <p className='text-[#59DCD3] my-2 tracking-wide  text-[40px]'>
+        <p className='text-[#59DCD3] my-2 tracking-wide text-[20px] md:text-[40px]'>
         BlokBets is dedicated to providing the most fair and enjoyable 
 
 
@@ -126,7 +130,7 @@ BlokBets vows to abide by the values of respect, trustworthiness, and integrity.
       <div className="sm:px-12">
 
         <div className="px-12">
-        <p className='text-[#59DCD3] my-2 tracking-wide  text-[40px]'>
+        <p className='text-[#59DCD3] my-2 tracking-wide  text-[20px] md:text-[40px]'>
      
 BlokBets aims to provide the safest and most secure user experience possible.
 

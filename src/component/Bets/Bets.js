@@ -4,10 +4,17 @@ import line from './../../assest/img-home/Line.png'
 import arrow1  from './../../assest/img-home/Arrow 1.png'
 import box from './../../assest/img-home/box.png'
 import { FaArrowRight } from "react-icons/fa";
+import useTitle from '../../Router/useTitle'
 
 
 
 const Bets = () => {
+
+
+  useTitle('Bets')
+
+
+  
   return (
     <>
     <div className="px-8 sm:px-12  py-14">
@@ -17,7 +24,7 @@ const Bets = () => {
 
         <div className=" relative	">
         <p className='text-[#59DCD3] my-2 tracking-wide text-[14px]'>
-               Eliminate The House , Unleash Profit Protential
+               Eliminate The House. Unleash Profit Protential
               </p>
               <h1 className='text-[30px] sm:leading-[50px] mb-6 text-white	 sm:text-[50px] font-semibold '>Offered Bets
             </h1>
@@ -123,7 +130,7 @@ const Bets = () => {
   <FaArrowRight className='text-white mt-[8px] mx-2  text-[30px] lg:text-[60px]'></FaArrowRight>
 </div>
             </div>
-            <Link to={'/login'}><button className='absolute bottom-100 mt-[120px] sm:mt-[60px] lg:mt-0 left-[20%] lg:left-0 sm:left-[40%]  lg:relative text-white uppercase  rounded-none font-normal hover:bg-[#47a09a] outline-none  py-4 px-[60px] text-[10px]  text-normal border-[1px] leading-[20px]  border-[#59DCD3]'>BET NOW</button></Link>
+            <Link to={''}><button className='absolute bottom-100 mt-[120px] sm:mt-[60px] lg:mt-0 left-[20%] lg:left-0 sm:left-[40%]  lg:relative text-white uppercase  rounded-none font-normal hover:bg-[#47a09a] outline-none  py-4 px-[60px] text-[10px]  text-normal border-[1px] leading-[20px]  border-[#59DCD3]'>BET NOW</button></Link>
 
             
             

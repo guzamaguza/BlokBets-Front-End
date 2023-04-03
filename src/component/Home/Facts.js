@@ -32,7 +32,7 @@ const Facts = () => {
 
           </div>
           <div className="">
-            <h1 className='text-[28px] leading-[38px] font-normal text-[#66FCF1]'>BLockBets</h1>
+            <h1 className='text-[28px] leading-[38px] font-normal text-[#66FCF1]'>BlokBets</h1>
             
             <div className="flex my-4 items-center">             <img src={rectangle} alt="" />
               <span className='mx-4'>0% Implicit Profit</span>  </div>

@@ -1,7 +1,10 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import useTitle from '../../Router/useTitle'
 
 const BetAccept = () => {
+
+  useTitle('BetAccept')
   return (
     
       <>
@@ -10,7 +13,7 @@ const BetAccept = () => {
           <div className="sm:px-12">
           <div className=" 	">
         <p className='text-[#59DCD3] my-2 tracking-wide text-[14px]'>
-               Eliminate The House , Unleash Profit Protential
+               Eliminate The House, Unleash Profit Protential
               </p>
               <h1 className='text-[30px] sm:leading-[50px] mb-6 text-white	 sm:text-[50px] font-semibold '>Bet Accepted
             </h1>
